@@ -916,7 +916,8 @@
       const deviceId = getDeviceId();
 
       if (!accessKey) {
-        window.location.href = '/login';
+        window.location.href = './login.html';
+
         return;
       }
 
@@ -927,7 +928,8 @@
 
         if (!data.valid) {
           localStorage.removeItem('accessKey');
-          window.location.href = '/login';
+          window.location.href = './login.html';
+
           return;
         }
 
@@ -935,7 +937,8 @@
         updateUI();
       } catch (err) {
         console.error('Session check failed:', err);
-        window.location.href = '/login';
+        window.location.href = './login.html';
+
       }
     }
 
