@@ -712,7 +712,8 @@
       submitBtn.disabled = true;
 
       try {
-        const response = await fetch('/api/auth/login', {
+        const response = await const response = await fetch('http://129.212.230.12:2000/api/auth/login', {
+
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ key, deviceId })
@@ -723,7 +724,8 @@
         if (data.success) {
           localStorage.setItem('accessKey', key);
           localStorage.setItem('member', JSON.stringify(data.member));
-          window.location.href = '/dashboard';
+          window.location.href = './dashboard.html';
+
         } else {
           errorText.textContent = data.error || 'Login gagal';
           errorBox.classList.add('show');
